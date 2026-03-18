@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/auth.route.js";
 import teamRoutes from "./routes/team.route.js";
-import adminRoutes from "./routes/admin.route.js";
+import submissionRoutes from "./routes/submission.route.js";
 
 dotenv.config();
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/team", teamRoutes);
-app.use("/api/admin", adminRoutes);
+app.use("/api/submissions", submissionRoutes);
 
 app.get("/", (req, res) => {
     res.send("Fraylon Backend Running 🚀");
