@@ -30,7 +30,13 @@ const participantSchema = new mongoose.Schema({
         ref: "Team",
         default: null
     },
-
+     
+    role: {
+        type: String,
+        enum: ["participant", "admin"],
+        default: "participant"
+    },
+    
     createdAt: {
         type: Date,
         default: Date.now
